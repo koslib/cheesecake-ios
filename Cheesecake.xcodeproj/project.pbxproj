@@ -7,27 +7,48 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		33880E3903E3349EA133D759 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D3A91513F4E68C054974714 /* libPods.a */; };
 		841B61D61C15D0AC0084BE81 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 841B61D51C15D0AC0084BE81 /* main.m */; };
 		841B61D91C15D0AD0084BE81 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 841B61D81C15D0AD0084BE81 /* AppDelegate.m */; };
-		841B61DC1C15D0AD0084BE81 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 841B61DB1C15D0AD0084BE81 /* ViewController.m */; };
 		841B61DF1C15D0AD0084BE81 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 841B61DD1C15D0AD0084BE81 /* Main.storyboard */; };
 		841B61E21C15D0AD0084BE81 /* Cheesecake.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 841B61E01C15D0AD0084BE81 /* Cheesecake.xcdatamodeld */; };
 		841B61E41C15D0AD0084BE81 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 841B61E31C15D0AD0084BE81 /* Assets.xcassets */; };
 		841B61E71C15D0AD0084BE81 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 841B61E51C15D0AD0084BE81 /* LaunchScreen.storyboard */; };
+		841B61EF1C15D4400084BE81 /* podfile in Resources */ = {isa = PBXBuildFile; fileRef = 841B61EE1C15D4400084BE81 /* podfile */; };
+		841B61F21C15D6310084BE81 /* ItemsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 841B61F11C15D6310084BE81 /* ItemsTableViewController.m */; };
+		841B61F61C15D7840084BE81 /* ItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 841B61F51C15D7840084BE81 /* ItemCell.m */; };
+		8446D6ED1C18A2A6004FC387 /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8446D6EC1C18A2A6004FC387 /* CameraViewController.m */; };
+		845FF3F31C28669D00340AA1 /* PhotoframeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 845FF3F21C28669D00340AA1 /* PhotoframeViewController.m */; };
+		84C499961C2310D60013E620 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C499951C2310D60013E620 /* LoginViewController.m */; };
+		84C499991C23111C0013E620 /* SignupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C499981C23111C0013E620 /* SignupViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2D3A91513F4E68C054974714 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		586E14C1E4754227247D6991 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		624FAD29B972A3BFE1705573 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		841B61D11C15D0AC0084BE81 /* Cheesecake.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cheesecake.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		841B61D51C15D0AC0084BE81 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		841B61D71C15D0AC0084BE81 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		841B61D81C15D0AD0084BE81 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		841B61DA1C15D0AD0084BE81 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		841B61DB1C15D0AD0084BE81 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		841B61DE1C15D0AD0084BE81 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		841B61E11C15D0AD0084BE81 /* Cheesecake.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Cheesecake.xcdatamodel; sourceTree = "<group>"; };
 		841B61E31C15D0AD0084BE81 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		841B61E61C15D0AD0084BE81 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		841B61E81C15D0AD0084BE81 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		841B61EE1C15D4400084BE81 /* podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = podfile; sourceTree = "<group>"; };
+		841B61F01C15D6310084BE81 /* ItemsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemsTableViewController.h; sourceTree = "<group>"; };
+		841B61F11C15D6310084BE81 /* ItemsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemsTableViewController.m; sourceTree = "<group>"; };
+		841B61F41C15D7840084BE81 /* ItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemCell.h; sourceTree = "<group>"; };
+		841B61F51C15D7840084BE81 /* ItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemCell.m; sourceTree = "<group>"; };
+		8446D6EB1C18A2A6004FC387 /* CameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraViewController.h; sourceTree = "<group>"; };
+		8446D6EC1C18A2A6004FC387 /* CameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraViewController.m; sourceTree = "<group>"; };
+		845FF3F11C28669D00340AA1 /* PhotoframeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoframeViewController.h; sourceTree = "<group>"; };
+		845FF3F21C28669D00340AA1 /* PhotoframeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoframeViewController.m; sourceTree = "<group>"; };
+		84C499941C2310D60013E620 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		84C499951C2310D60013E620 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		84C499971C23111C0013E620 /* SignupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignupViewController.h; sourceTree = "<group>"; };
+		84C499981C23111C0013E620 /* SignupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignupViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33880E3903E3349EA133D759 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,8 +66,11 @@
 		841B61C81C15D0AC0084BE81 = {
 			isa = PBXGroup;
 			children = (
+				841B61EE1C15D4400084BE81 /* podfile */,
 				841B61D31C15D0AC0084BE81 /* Cheesecake */,
 				841B61D21C15D0AC0084BE81 /* Products */,
+				A0B8A6E9CF863E73BEF8C2E4 /* Pods */,
+				AD0E2BCD604CA55039F9A9F5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -62,8 +87,7 @@
 			children = (
 				841B61D71C15D0AC0084BE81 /* AppDelegate.h */,
 				841B61D81C15D0AD0084BE81 /* AppDelegate.m */,
-				841B61DA1C15D0AD0084BE81 /* ViewController.h */,
-				841B61DB1C15D0AD0084BE81 /* ViewController.m */,
+				841B61F31C15D6390084BE81 /* View Controllers */,
 				841B61DD1C15D0AD0084BE81 /* Main.storyboard */,
 				841B61E31C15D0AD0084BE81 /* Assets.xcassets */,
 				841B61E51C15D0AD0084BE81 /* LaunchScreen.storyboard */,
@@ -82,6 +106,58 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		841B61F31C15D6390084BE81 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				84C4999A1C23121D0013E620 /* Authentication */,
+				845FF3ED1C28547000340AA1 /* Table */,
+				8446D6EB1C18A2A6004FC387 /* CameraViewController.h */,
+				8446D6EC1C18A2A6004FC387 /* CameraViewController.m */,
+				845FF3F11C28669D00340AA1 /* PhotoframeViewController.h */,
+				845FF3F21C28669D00340AA1 /* PhotoframeViewController.m */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		845FF3ED1C28547000340AA1 /* Table */ = {
+			isa = PBXGroup;
+			children = (
+				841B61F01C15D6310084BE81 /* ItemsTableViewController.h */,
+				841B61F11C15D6310084BE81 /* ItemsTableViewController.m */,
+				841B61F41C15D7840084BE81 /* ItemCell.h */,
+				841B61F51C15D7840084BE81 /* ItemCell.m */,
+			);
+			name = Table;
+			sourceTree = "<group>";
+		};
+		84C4999A1C23121D0013E620 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				84C499941C2310D60013E620 /* LoginViewController.h */,
+				84C499951C2310D60013E620 /* LoginViewController.m */,
+				84C499971C23111C0013E620 /* SignupViewController.h */,
+				84C499981C23111C0013E620 /* SignupViewController.m */,
+			);
+			name = Authentication;
+			sourceTree = "<group>";
+		};
+		A0B8A6E9CF863E73BEF8C2E4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				586E14C1E4754227247D6991 /* Pods.debug.xcconfig */,
+				624FAD29B972A3BFE1705573 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		AD0E2BCD604CA55039F9A9F5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2D3A91513F4E68C054974714 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -89,9 +165,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 841B61EB1C15D0AD0084BE81 /* Build configuration list for PBXNativeTarget "Cheesecake" */;
 			buildPhases = (
+				3089A9164B7C2C427A190DD7 /* Check Pods Manifest.lock */,
 				841B61CD1C15D0AC0084BE81 /* Sources */,
 				841B61CE1C15D0AC0084BE81 /* Frameworks */,
 				841B61CF1C15D0AC0084BE81 /* Resources */,
+				CEC7C678DB52F04BFEB47F3F /* Embed Pods Frameworks */,
+				C77E376029817CA13572F9B9 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -113,6 +192,7 @@
 				TargetAttributes = {
 					841B61D01C15D0AC0084BE81 = {
 						CreatedOnToolsVersion = 7.1.1;
+						DevelopmentTeam = 94MHYHRMW3;
 					};
 				};
 			};
@@ -141,20 +221,74 @@
 			files = (
 				841B61E71C15D0AD0084BE81 /* LaunchScreen.storyboard in Resources */,
 				841B61E41C15D0AD0084BE81 /* Assets.xcassets in Resources */,
+				841B61EF1C15D4400084BE81 /* podfile in Resources */,
 				841B61DF1C15D0AD0084BE81 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3089A9164B7C2C427A190DD7 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C77E376029817CA13572F9B9 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CEC7C678DB52F04BFEB47F3F /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		841B61CD1C15D0AC0084BE81 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				845FF3F31C28669D00340AA1 /* PhotoframeViewController.m in Sources */,
+				84C499961C2310D60013E620 /* LoginViewController.m in Sources */,
+				841B61F61C15D7840084BE81 /* ItemCell.m in Sources */,
 				841B61E21C15D0AD0084BE81 /* Cheesecake.xcdatamodeld in Sources */,
-				841B61DC1C15D0AD0084BE81 /* ViewController.m in Sources */,
+				84C499991C23111C0013E620 /* SignupViewController.m in Sources */,
+				841B61F21C15D6310084BE81 /* ItemsTableViewController.m in Sources */,
 				841B61D91C15D0AD0084BE81 /* AppDelegate.m in Sources */,
+				8446D6ED1C18A2A6004FC387 /* CameraViewController.m in Sources */,
 				841B61D61C15D0AC0084BE81 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -265,22 +399,28 @@
 		};
 		841B61EC1C15D0AD0084BE81 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 586E14C1E4754227247D6991 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Cheesecake/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = efi.kostas.Cheesecake;
+				PRODUCT_BUNDLE_IDENTIFIER = eu.intelligems.cheesecake;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
 		};
 		841B61ED1C15D0AD0084BE81 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 624FAD29B972A3BFE1705573 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Cheesecake/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = efi.kostas.Cheesecake;
+				PRODUCT_BUNDLE_IDENTIFIER = eu.intelligems.cheesecake;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -304,6 +444,7 @@
 				841B61ED1C15D0AD0084BE81 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
