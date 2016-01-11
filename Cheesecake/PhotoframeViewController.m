@@ -13,28 +13,45 @@
 
 @interface PhotoframeViewController ()
 @property (nonatomic, strong) NSMutableArray *parseItemsArray;
+@property (nonatomic, strong) NSTimer *photoTimer;
 
 @end
 
 @implementation PhotoframeViewController
 @synthesize parseItemsArray;
 
+-(void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self loadImages];
+    _images = [[NSMutableArray alloc] init];
+    
+    _startBtnOutlet.hidden = NO;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-//    _images = @[@"shareIcon.png", @"shareIconSelected.png", @"shareIcon.png", @"shareIconSelected.png"];
-    [self loadImages];
+//    [self loadImages];
     
 }
 
-- (void)changeImage
+-(void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    
+    [_photoTimer invalidate];
+    _photoTimer = nil;
+    _imageToShow.image = nil;
+}
+
+- (void)changeImage:(NSTimer *)timer
 {
+    _startBtnOutlet.hidden = YES;
     static int counter = 0;
     if([_images count] == counter+1)
     {
         counter = 0;
     }
-    _imageToShow.image = [UIImage imageNamed:[_images objectAtIndex:counter]];
+    _imageToShow.image = [UIImage imageWithData:[_images objectAtIndex:counter]];
     
     NSLog(@"%d", counter);
     counter++;
@@ -45,12 +62,61 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+
+    // We don't need to manually deallon or release our _images NSMutableArray resources,
+    // because we make use of the ARC. It forbits explicit deallocation, but it also
+    // handles memory-pressing reources itself.
 }
 
 -(void)loadImages {
     PFQuery *query = [PFQuery queryWithClassName:@"Images"];
     [query whereKey:@"user" equalTo:[PFUser currentUser]];
-    parseItemsArray = [query findObjects];
+    
+    
+//    [query getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error) {
+//        if (!object) {
+//            return NSLog(@"%@", error);
+//        }
+//        
+//        PFFile *imageFile = object[@"image"];
+//        
+//        [imageFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+//            if (!data) {
+//                return NSLog(@"%@", error);
+//            }
+//            
+//            // Do something with the image
+////            self.imageToShow.image = [UIImage imageWithData:data];
+//            [_images addObject:data];
+//
+//        }];
+//    }];
+    
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            
+            
+            // Do something with the found objects
+            for (PFObject *object in objects) {
+                PFFile *imageFile = object[@"image"];
+                
+                [imageFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+                    if (!data) {
+                        return NSLog(@"%@", error);
+                    }
+                    
+                    // Do something with the image
+                    //            self.imageToShow.image = [UIImage imageWithData:data];
+                    [_images addObject:data];
+                    
+                }];
+                
+            }
+        } else {
+            // Log details of the failure
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        }
+    }];
 
 }
 
@@ -66,6 +132,7 @@
 */
 
 - (IBAction)startPhotoframe:(id)sender {
-    [self changeImage];
+    _photoTimer = [NSTimer scheduledTimerWithTimeInterval:5.0f
+                                     target:self selector:@selector(changeImage:) userInfo:nil repeats:YES];
 }
 @end
