@@ -31,7 +31,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-//    [self loadImages];
     
 }
 
@@ -47,13 +46,13 @@
 {
     _startBtnOutlet.hidden = YES;
     static int counter = 0;
-    if([_images count] == counter+1)
+    if([_images count] == counter)
     {
         counter = 0;
     }
     _imageToShow.image = [UIImage imageWithData:[_images objectAtIndex:counter]];
     
-    NSLog(@"%d", counter);
+    NSLog(@"Photoframe counter index: %d", counter);
     counter++;
     
     
@@ -72,31 +71,10 @@
     PFQuery *query = [PFQuery queryWithClassName:@"Images"];
     [query whereKey:@"user" equalTo:[PFUser currentUser]];
     
-    
-//    [query getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error) {
-//        if (!object) {
-//            return NSLog(@"%@", error);
-//        }
-//        
-//        PFFile *imageFile = object[@"image"];
-//        
-//        [imageFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
-//            if (!data) {
-//                return NSLog(@"%@", error);
-//            }
-//            
-//            // Do something with the image
-////            self.imageToShow.image = [UIImage imageWithData:data];
-//            [_images addObject:data];
-//
-//        }];
-//    }];
-    
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
             
-            
-            // Do something with the found objects
+            // Handle found objects
             for (PFObject *object in objects) {
                 PFFile *imageFile = object[@"image"];
                 
@@ -106,11 +84,8 @@
                     }
                     
                     // Do something with the image
-                    //            self.imageToShow.image = [UIImage imageWithData:data];
                     [_images addObject:data];
-                    
                 }];
-                
             }
         } else {
             // Log details of the failure

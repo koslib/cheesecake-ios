@@ -57,21 +57,24 @@
 }
 
 - (IBAction)uploadPhoto:(id)sender {
+    NSLocale* currentLocale = [NSLocale currentLocale];
+    
     UIImage *new = self.imageView.image;
     
-    // Convert to JPEG with 50% quality
+    // Convert to JPEG with slightly smaller quality
     NSData* data = UIImageJPEGRepresentation(new, 0.99f);
     PFFile *imageFile = [PFFile fileWithName:@"Image.jpg" data:data];
     
     // Save the image to Parse
-    
+    // operation in background
     [imageFile saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (!error) {
             // The image has now been uploaded to Parse. Associate it with a new object
             PFObject* newPhotoObject = [PFObject objectWithClassName:@"Images"];
             [newPhotoObject setObject:imageFile forKey:@"image"];
             [newPhotoObject setObject:[PFUser currentUser] forKey:@"user"];
-            [newPhotoObject setObject:@"test" forKey:@"title"];
+            NSString *imageTitle =  [NSString stringWithFormat:@"%@", [[NSDate date] descriptionWithLocale:currentLocale]];
+            [newPhotoObject setObject:imageTitle forKey:@"title"];
             
             [newPhotoObject saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
                 UIAlertView *alert = [UIAlertView alloc];
@@ -86,7 +89,6 @@
                     [alert initWithTitle:@"Error!" message:@"Something went wrong! Try again!" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
                 }
                 [alert show];
-//                [self takePhoto];
                 self.imageView.image = nil;
             }];
         }

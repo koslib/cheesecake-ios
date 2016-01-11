@@ -28,6 +28,8 @@
     if ([PFUser currentUser]) {
         [self loadItemsObjects];
     }
+    
+    parseItemsArray = [[NSMutableArray alloc] init];
 }
 
 
@@ -38,7 +40,6 @@
     PFUser *currentUser = [PFUser currentUser];
     if (currentUser) {
         NSLog(@"Current user: %@", currentUser.username);
-//        [self loadItemsObjects];
         
         // Initialize the refresh control.
         self.refreshControl = [[UIRefreshControl alloc] init];
@@ -46,7 +47,7 @@
         self.refreshControl.tintColor = [UIColor whiteColor];
         self.edgesForExtendedLayout = UIRectEdgeNone;
         [self.refreshControl addTarget:self
-                                action:@selector(loadItemsObjects)
+                                action:@selector(loadItemsObjectsFast)
                       forControlEvents:UIControlEventValueChanged];
     }
     else {
@@ -89,26 +90,35 @@
 -(void)loadItemsObjects {
     PFQuery *query = [PFQuery queryWithClassName:@"Images"];
     [query whereKey:@"user" equalTo:[PFUser currentUser]];
-    parseItemsArray = [query findObjects];
-//    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error){
-//        if(!error){
-//            NSLog(@"Successfully retrieved %lu images.", (unsigned long)objects.count);
-//            for (PFObject *object in objects) {
-//                NSLog(@"Retrieved Object ID: %@", object.objectId);
-//                [parseItemsArray addObject:object];
-//            }
-//            [self.tableView reloadData];
-//            
-//            dispatch_async(dispatch_get_main_queue(), ^ {
-//                [self.tableView reloadData];
-//            });
-//            
-//        } else {
-//            NSLog(@"Error: %@ %@", error, [error userInfo]);
-//        }
-//    }];
-    [self reloadData];
+    
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error){
+        if(!error){
+            NSLog(@"Successfully retrieved %lu images.", (unsigned long)objects.count);
+            for (PFObject *object in objects) {
+                NSLog(@"Retrieved Object ID: %@", object.objectId);
+                [parseItemsArray addObject:object];
+            }
+            [self.tableView reloadData];
+            
+            dispatch_async(dispatch_get_main_queue(), ^ {
+                [self.tableView reloadData];
+            });
+            
+        } else {
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        }
+    }];
 
+}
+
+-(void)loadItemsObjectsFast {
+    PFQuery *query = [PFQuery queryWithClassName:@"Images"];
+    [query whereKey:@"user" equalTo:[PFUser currentUser]];
+    
+    parseItemsArray = [query findObjects];
+    
+    [self reloadData];
+    
 }
 
 #pragma mark - Table view data source
