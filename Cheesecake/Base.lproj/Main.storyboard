@@ -21,10 +21,10 @@
                                 <rect key="frame" x="0.0" y="92" width="600" height="97"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="hCv-t4-mUR" id="j0a-fu-XAv">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="97"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="96.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="s4Q-yJ-Bka">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="s4Q-yJ-Bka">
                                             <rect key="frame" x="0.0" y="8" width="112" height="81"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="112" id="SQG-z2-Hor"/>
@@ -66,13 +66,13 @@
                     <navigationItem key="navigationItem" title="Library" id="QZq-JM-Gln">
                         <barButtonItem key="backBarButtonItem" title="back" id="F3p-NA-j34"/>
                         <barButtonItem key="leftBarButtonItem" title="Log Out" id="py6-k5-Gv2">
-                            <color key="tintColor" red="1" green="0.63474012619999998" blue="0.23222127649999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="tintColor" red="0.7725490196" green="0.094117647060000004" blue="0.19215686269999999" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="logoutTaped:" destination="1Rc-Jb-F7O" id="SlG-Za-pXz"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="j5P-9d-hmU">
-                            <color key="tintColor" red="1" green="0.63474012619999998" blue="0.23222127649999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="tintColor" red="0.7725490196" green="0.094117647060000004" blue="0.19215686269999999" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <segue destination="a6X-P2-2sp" kind="show" id="zxg-yp-1A9"/>
                             </connections>
@@ -105,7 +105,7 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="24"/>
                                 <state key="normal" title="Select from your camera roll">
-                                    <color key="titleColor" red="1" green="0.63474012619999998" blue="0.23222127649999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="0.7725490196" green="0.094117647060000004" blue="0.19215686269999999" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="selectPhoto:" destination="a6X-P2-2sp" eventType="touchUpInside" id="NPo-Kc-NSi"/>
@@ -118,7 +118,7 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="Take a new photo">
-                                    <color key="titleColor" red="1" green="0.63474012619999998" blue="0.23222127649999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="0.7725490196" green="0.094117647060000004" blue="0.19215686269999999" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="newPhotoTaped:" destination="a6X-P2-2sp" eventType="touchUpInside" id="wXQ-ag-8G8"/>
@@ -146,7 +146,7 @@
                     <navigationItem key="navigationItem" title="New photo" id="YJv-Ur-2f2">
                         <barButtonItem key="backBarButtonItem" title="all" id="Pz7-Py-PeC"/>
                         <barButtonItem key="rightBarButtonItem" title="Upload" id="J1z-cK-40k">
-                            <color key="tintColor" red="1" green="0.63474012619999998" blue="0.23222127649999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="tintColor" red="0.7725490196" green="0.094117647060000004" blue="0.19215686269999999" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="uploadPhoto:" destination="a6X-P2-2sp" id="z7V-Yl-spK"/>
                             </connections>
@@ -199,7 +199,9 @@
                                     <constraint firstAttribute="width" constant="212" id="9bf-qi-4XF"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="22"/>
-                                <state key="normal" title="Start Photoframe"/>
+                                <state key="normal" title="Start Photoframe">
+                                    <color key="titleColor" red="0.77254901960784317" green="0.094117647058823528" blue="0.19215686274509802" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="startPhotoframe:" destination="IEo-TA-0GA" eventType="touchUpInside" id="XnE-SN-B0h"/>
                                 </connections>
@@ -398,7 +400,7 @@
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="igD-iq-laP" kind="show" id="Mv6-Qv-BFa"/>
+                                    <segue destination="igD-iq-laP" kind="show" identifier="showLogin" id="Mv6-Qv-BFa"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MyD-FT-s7b">
@@ -470,6 +472,6 @@
         <image name="PhotoframeTabIcon" width="26" height="18"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="x3F-EE-E21"/>
+        <segue reference="Mv6-Qv-BFa"/>
     </inferredMetricsTieBreakers>
 </document>

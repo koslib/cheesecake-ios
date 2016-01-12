@@ -18,8 +18,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    [[UITabBar appearance] setTintColor:[UIColor orangeColor]];
-//    [[UITabBar appearance] setBarTintColor:[UIColor orangeColor]];
+    [[UITabBar appearance] setTintColor:[UIColor colorWithRed:(197/255.f) green:(24/255.f) blue:(49/255.f) alpha:1]];
     
     // Initialize Parse datastore
     [Parse enableLocalDatastore];

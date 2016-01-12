@@ -15,6 +15,14 @@
 
 @implementation SignupViewController
 
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    if ([PFUser currentUser]) {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }
+    
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -29,12 +37,9 @@
 
 -(void)setupUI {
     // sinup button
-    _signupButton.backgroundColor = [UIColor colorWithRed:(245/255.f) green:(166/255.f) blue:(35/255.f) alpha:1];
+    _signupButton.backgroundColor = [UIColor colorWithRed:(197/255.f) green:(24/255.f) blue:(49/255.f) alpha:1];
     [_signupButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     
-    // signup with facebook button
-    _signupWithFacebookButton.backgroundColor = [UIColor colorWithRed:(59/255.f) green:(89/255.f) blue:(152/255.f) alpha:1];
-    [_signupWithFacebookButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -28,6 +28,7 @@
     if (currentUser) {
         NSLog(@"Current user: %@", currentUser.username);
         //        [self performSegueWithIdentifier:@"showMainView" sender:self];
+        [self dismissViewControllerAnimated:YES completion:nil];
     }
 }
 
@@ -38,12 +39,8 @@
 
 -(void)setupUI {
     // login button
-    _loginButton.backgroundColor = [UIColor colorWithRed:(245/255.f) green:(166/255.f) blue:(35/255.f) alpha:1];
+    _loginButton.backgroundColor = [UIColor colorWithRed:(197/255.f) green:(24/255.f) blue:(49/255.f) alpha:1];
     [_loginButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    
-    // facebook login button
-    _loginWithFacebookButton.backgroundColor = [UIColor colorWithRed:(59/255.f) green:(89/255.f) blue:(152/255.f) alpha:1];
-    [_loginWithFacebookButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     
     // login later button
     _loginLaterButton.backgroundColor = [UIColor colorWithRed:(155/255.f) green:(155/255.f) blue:(155/255.f) alpha:1];

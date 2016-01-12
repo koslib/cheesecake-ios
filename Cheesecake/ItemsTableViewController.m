@@ -43,7 +43,7 @@
         
         // Initialize the refresh control.
         self.refreshControl = [[UIRefreshControl alloc] init];
-        self.refreshControl.backgroundColor = [UIColor orangeColor];
+        self.refreshControl.backgroundColor = [UIColor colorWithRed:(197/255.f) green:(24/255.f) blue:(49/255.f) alpha:1];
         self.refreshControl.tintColor = [UIColor whiteColor];
         self.edgesForExtendedLayout = UIRectEdgeNone;
         [self.refreshControl addTarget:self
