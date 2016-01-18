@@ -8,6 +8,7 @@
 
 #import "PhotoframeViewController.h"
 #import <Parse/Parse.h>
+#import <SAMCache/SAMCache.h>
 
 @class PFQuery;
 
@@ -78,14 +79,22 @@
             for (PFObject *object in objects) {
                 PFFile *imageFile = object[@"image"];
                 
-                [imageFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
-                    if (!data) {
-                        return NSLog(@"%@", error);
-                    }
-                    
-                    // Do something with the image
-                    [_images addObject:data];
-                }];
+                NSString *key = [[NSString alloc] initWithFormat:@"%@-photoItem", object];
+                UIImage *photo = [[SAMCache sharedCache] imageForKey:key];
+                
+                if(!photo) {
+                    [imageFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+                        if (!data) {
+                            return NSLog(@"%@", error);
+                        }
+                        
+                        // Do something with the image
+                        [_images addObject:data];
+                    }];
+                } else {
+                    [_images addObject:[NSData dataWithData:photo]];
+                }
+
             }
         } else {
             // Log details of the failure
