@@ -1,0 +1,28 @@
+<html>
+<head>
+  <title> CheeseCake Login</title>
+</head>
+<body>
+  <div>
+    <form>
+      <input name="username" placeholder="Enter your username" type="text" id="username_field"/>
+      <input name="password" placeholder="Enter your password" type="password" id="password_field"/>
+      <input type="submit" onclick="login()" value="Log In"/>
+    </form>
+  </div>
+
+<script type="text/javascript>">
+Parse.User.logIn(document.getElementById("username_field"), document.getElementById("password_field"), {
+  success: function(user) {
+    // Do stuff after successful login.
+    alert("Successfull login");
+  },
+  error: function(user, error) {
+    // The login failed. Check error to see why.
+    alert("Error while loggin in");
+  }
+});
+
+</script>
+</body>
+</html>

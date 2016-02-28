@@ -1,0 +1,33 @@
+<html>
+<head>
+  <title> CheeseCake Upload</title>
+</head>
+<body>
+  <div>
+    <h2>Upload a photo</h2>
+    <form>
+      <input name="image" type="file" alt="Your image to be uploaded" id="image_field"/>
+      <input type="submit" onclick="upload()" value="Upload"/>
+    </form>
+  </div>
+
+<script type="text/javascript>">
+var Images = Parse.Object.extend("Images");
+var image = new Images();
+
+image.set("image", document.getElementById('image_field'));
+image.set("user", Parse.User.current());
+
+image.save(null, {
+  success: function(gameScore) {
+    alert('Photo uploaded!');
+    console.log('New object created with objectId: ' + gameScore.id);
+  },
+  error: function(gameScore, error) {
+    alert('Failed to create new object, with error code: ' + error.message);
+  }
+});
+
+</script>
+</body>
+</html>
